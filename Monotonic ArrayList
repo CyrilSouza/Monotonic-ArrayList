@@ -1,0 +1,23 @@
+
+import java.util.*;
+class Solution{
+    public boolean ismonotonic(ArrayList<Integer> nums ){
+        boolean inc=true;
+        boolean dec=true;
+        for(int i=0;i<nums.size()-1;i++){
+            if(nums.get(i)>nums.get(i+1)){
+                inc=false;
+            }
+            if(nums.get(i)<nums.get(i+1)){
+                dec=false;
+            }
+        }
+        return inc || dec;
+    }
+    public static void main(String[] args){
+        ArrayList<Integer>nums=new ArrayList<>(Arrays.asList(12,13,4,5,6));
+        Solution solution=new Solution();
+        boolean result= solution.ismonotonic(nums);
+        System.out.print(result);
+    }
+}
